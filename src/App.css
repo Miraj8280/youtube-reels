@@ -5,9 +5,9 @@
   text-align: center;
 }
 
-.app_video { 
+.app_video {
   position: relative;
-  top:-8%;
+  top: -8%;
   height: 80vh;
   width: 100%;
   max-width: 350px;
@@ -19,19 +19,16 @@
   display: none;
 }
 
-@media only screen and (max-width:375px)
-{
-  .App{
-   width: 100%;
-  } 
+@media only screen and (max-width: 375px) {
+  .App {
+    width: 100%;
+  }
 }
 @media only screen and (max-width: 600px) {
   .App {
     background: linear-gradient(to bottom, rgb(176, 4, 4), #e5d6d6);
   }
-   .app_video{
+  .app_video {
     width: 100%;
-   }
-  
+  }
 }
-

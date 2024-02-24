@@ -14,24 +14,21 @@
   border-radius: 10px;
   align-items: center;
   justify-content: center;
-
 }
 
-.video__progress{
+.video__progress {
   position: relative;
-  top:-2%;
-   height: 5px;
+  top: -2%;
+  height: 5px;
   background-color: rgb(246, 46, 46);
 }
 
-
-.videoplay{
+.videoplay {
   width: 100%;
   height: 100%;
   object-fit: fill;
   border-radius: 10px;
 }
-
 
 .shortsVideoTop {
   position: absolute;
@@ -136,5 +133,5 @@
 .shortsVideoSideIcon > .MuiSvgIcon-root:last-child {
   bottom: 0;
   right: 20px;
-  font-size: 32px;
+  font-size: 28px;
 }

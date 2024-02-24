@@ -1,4 +1,4 @@
-import { useState, useRef,useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import "./videoPlayer.css";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { VolumeUpRounded } from "@mui/icons-material";
@@ -11,8 +11,7 @@ import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import PauseIcon from "@mui/icons-material/Pause";
 
 // eslint-disable-next-line react/prop-types
-function Video({ id, src, desc }) { 
-  
+function Video({ id, src, desc }) {
   const [playing, setPlaying] = useState(false);
   const videoRef = useRef(null);
   const [Subscribe, setSubscribe] = useState(false);
@@ -21,7 +20,6 @@ function Video({ id, src, desc }) {
   const [Disliked, setDisliked] = useState(false);
   const [Dislikes, setDislikes] = useState(0);
   const [progress, setProgress] = useState(0);
-
 
   useEffect(() => {
     const updateProgress = () => {
@@ -33,15 +31,12 @@ function Video({ id, src, desc }) {
 
     videoRef.current.addEventListener("timeupdate", updateProgress);
 
-    
     const handleVisibilityChange = (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          
           setPlaying(true);
           videoRef.current.play();
         } else {
-          
           setPlaying(false);
           videoRef.current.pause();
         }
@@ -52,16 +47,14 @@ function Video({ id, src, desc }) {
       threshold: 0.5,
     });
 
-   
     observer.observe(videoRef.current);
 
-    
     return () => {
       observer.disconnect();
     };
   }, []);
 
-  const handelVideoplaying = () => { 
+  const handelVideoplaying = () => {
     if (playing) {
       setPlaying(false);
       videoRef.current.pause();
@@ -70,8 +63,6 @@ function Video({ id, src, desc }) {
       setPlaying(true);
     }
   };
-
-
 
   const handelSubscribe = () => {
     setSubscribe((subs) => !subs);
@@ -100,37 +91,36 @@ function Video({ id, src, desc }) {
     }
   };
 
-
-  
-
   return (
     <div className="video">
       <div className="video__player">
         <video
-        onClick={handelVideoplaying}
+          onClick={handelVideoplaying}
           id={id}
           className="videoplay"
           ref={videoRef}
           loop
           src={src}
         />
-        <div className="video__progress" style={{ width: `${progress}%` }}></div>
+        <div
+          className="video__progress"
+          style={{ width: `${progress}%` }}
+        ></div>
       </div>
-    
+
       <div className="shortsContainer">
         <div className="shortsVideoTop">
           <div className="shortsVideoTopIcon">
-          {playing ? (
-            <PauseIcon onClick={handelVideoplaying}/>
-          ) : (
-            <PlayArrowIcon onClick={handelVideoplaying} />
-          )}  
+            {playing ? (
+              <PauseIcon onClick={handelVideoplaying} />
+            ) : (
+              <PlayArrowIcon onClick={handelVideoplaying} />
+            )}
           </div>
           <div className="shortsVideoTopIcon">
-            <VolumeUpRounded/>
-            </div>
+            <VolumeUpRounded />
           </div>
-         
+        </div>
 
         <div className="shortsVideoSideIcons">
           <div className="shortsVideoSideIcon">
@@ -156,7 +146,7 @@ function Video({ id, src, desc }) {
           <div className="shortsVideoSideIcon">
             <CommentIcon />
           </div>
-         
+
           <div className="shortsVideoSideIcon">
             <ShareIcon />
           </div>
@@ -179,7 +169,7 @@ function Video({ id, src, desc }) {
             <button
               style={{
                 background: Subscribe ? "grey" : "white",
-                color: Subscribe ? "white" : ""
+                color: Subscribe ? "white" : "",
               }}
               onClick={handelSubscribe}
             >

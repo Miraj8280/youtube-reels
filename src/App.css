@@ -25,9 +25,6 @@
   }
 }
 @media only screen and (max-width: 600px) {
-  .App {
-    background: linear-gradient(to bottom, rgb(176, 4, 4), #e5d6d6);
-  }
   .app_video {
     width: 100%;
   }
